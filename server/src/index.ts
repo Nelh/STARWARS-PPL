@@ -1,5 +1,6 @@
 import express from 'express';
 import { graphqlHTTP } from 'express-graphql';
+const path = require('path');
 import cors from 'cors';
 import { schema } from './Schema';
 
@@ -11,6 +12,12 @@ app.use('/graphql', graphqlHTTP({
   schema,
   graphiql: true,
 }));
+
+// production ready
+app.use(express.static('public'));
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'public', 'index.html'))
+});
 
 let PORT = process.env.PORT || 4000;
 
