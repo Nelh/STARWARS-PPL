@@ -14,11 +14,11 @@ app.use('/graphql', graphqlHTTP({
 }));
 
 // production ready
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../public')));
 app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'))
+  res.sendFile(path.join(__dirname, '../public', 'index.html'))
 });
 
-let PORT = process.env.PORT || 4000;
+let PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => console.log(`Running a GraphQL API server at ${PORT}`));
