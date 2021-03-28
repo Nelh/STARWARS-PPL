@@ -4,7 +4,7 @@
     "module": "esnext",
     "outDir": "./build",
     "rootDir": "./src",
-    "strictPropertyInitialization": true,
+    // "strictPropertyInitialization": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
     "experimentalDecorators": true,
