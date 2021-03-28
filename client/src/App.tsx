@@ -1,23 +1,23 @@
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import './App.scss';
 
+import Home from './Pages/Home';
+import People from './Pages/People';
+
 function App() {
   const client = new ApolloClient({
-    uri: 'http://localost:4000',
+    uri: 'http://localhost:4000/graphql',
     cache: new InMemoryCache(),
   });
 
   return (
     <ApolloProvider client={client}>
-      <nav className="navbar navbar-light bg-light">
-        <div className="container-fluid">
-          <a className="navbar-brand">Navbar</a>
-          <form className="d-flex">
-            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-            <button className="btn btn-outline-success" type="submit">Search</button>
-          </form>
-        </div>
-      </nav>
+      <Router>
+        <Route exact path="/:page?" component={Home} />
+        <Route path="/people/:id" component={People} />
+      </Router>
     </ApolloProvider>
   );
 }

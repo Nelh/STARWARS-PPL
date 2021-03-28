@@ -3,15 +3,12 @@ import { GraphQLInt, GraphQLList, GraphQLObjectType, GraphQLString } from 'graph
 const SearchResults = new GraphQLObjectType({
     name: "searchresult",
     fields: () => ({
-        name: {type: GraphQLString},
-        height: {type: GraphQLString},
-        mass: {type: GraphQLString},
-        hair_color: {type: GraphQLString},
-        skin_color: {type: GraphQLString},
-        eye_color: {type: GraphQLString},
-        birth_year: {type: GraphQLString},
-        gender: {type: GraphQLString},
-        homeworld: {type: GraphQLString}
+        name: { type: GraphQLString},
+        height: { type: GraphQLString},
+        mass: { type: GraphQLString},
+        gender:  { type: GraphQLString},
+        homeworld:  { type: GraphQLString},
+        url: {type: GraphQLString},
     })
 });
 
@@ -20,6 +17,7 @@ export const SearchPeopleType = new GraphQLObjectType({
     fields: {
         count: { type: GraphQLInt },
         next: { type: GraphQLString },
+        previous: { type: GraphQLString },
         results: { type: new GraphQLList(SearchResults) }
     }
 });

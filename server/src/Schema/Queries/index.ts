@@ -9,8 +9,9 @@ import { SearchPeopleType } from '../TypeDefs/SearchPeopleType';
  */
 export const GET_PEOPLES_LIST = {
     type: PeoplesType,
-    async resolve() {
-        const res = await axios.get("https://swapi.dev/api/people/");
+    args: { page: { type: GraphQLString}},
+    async resolve(parent: any, args: any) {
+        const res = await axios.get(`http://swapi.dev/api/people/?${args.page}`);
         return res.data;
     }
 }
@@ -35,7 +36,7 @@ export const SEARCH_PEOPLE = {
     type: SearchPeopleType,
     args: { name: { type: GraphQLString}},
     async resolve(parent:any, args: any) {
-        const res =  await axios.get(`https://swapi.dev/api/people/?search=${args.name}`);
+        const res =  await axios.get(`https://swapi.dev/api/people/${args.name}`);
         return res.data;
     }
 }

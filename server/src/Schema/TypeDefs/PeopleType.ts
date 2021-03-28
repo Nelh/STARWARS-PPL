@@ -17,6 +17,7 @@ export const PeoplesType = new GraphQLObjectType({
     fields: {
         count: { type: GraphQLInt },
         next: { type: GraphQLString },
+        previous: { type: GraphQLString },
         results: { type: new GraphQLList(PeopleResult) }
     }
 });
