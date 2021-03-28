@@ -1,6 +1,6 @@
 import express from 'express';
 import { graphqlHTTP } from 'express-graphql';
-const path = require('path');
+import path from 'path';
 import cors from 'cors';
 import { schema } from './Schema';
 
