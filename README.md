@@ -14,10 +14,11 @@ A SPA build with React, Typescript, Graphql that utilize the starwars Api (https
 
 - Nodejs
 - TypeScript
+- React
 
 ## Installation
 
-- You first need to clone or download the repository.
+- You first need to clone the repository.
 
 ```javascript
 git clone https://github.com/Nelh/React-Typescript-GraphQL-Project.git
@@ -30,13 +31,13 @@ git clone https://github.com/Nelh/React-Typescript-GraphQL-Project.git
 ```javascript
 cd React-Typescript-GraphQL-Project/server
 ```
-Run npm
+Run npm install
 
 ```javascript
 npm install
 ```
 
-Start the Server, if you have yarn install run
+To start the Server, if you have yarn install run
 
 ```javascript
 yarn dev 
@@ -57,14 +58,14 @@ You should see something like this on the terminal
 Running a GraphQL API server at 5000...
 ```
 
-## client
+## Client
 
 Open a new terminal and in the root folder cd into the client folder
 
 ```javascript
 cd React-Typescript-GraphQL-Project/client
 ```
-Run npm
+Run npm install
 
 ```javascript
 npm install
@@ -96,5 +97,5 @@ To create a production build, use yarn build...
 
 
 ### Author
-nelh Armstrong
+Nelh Armstrong
 
